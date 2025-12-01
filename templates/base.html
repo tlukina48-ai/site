@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Room Booking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Комната отдыха — бронирование</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Главная</a> |
+      <a href="{{ url_for('book_month') }}">Забронировать</a> |
+      <a href="{{ url_for('my_bookings') }}">Мои брони</a> |
+      <a href="{{ url_for('schedule') }}">Расписание</a> |
+      <a href="{{ url_for('support') }}">Поддержать</a> |
+      <a href="{{ url_for('top5') }}">Доска почёта</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for m in messages %}
+          <li>{{ m }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <hr>
+    <p>Перед уходом оставляйте чистоту, иначе я вас вычислю!</p>
+  </footer>
+</body>
+</html>

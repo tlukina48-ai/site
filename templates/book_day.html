@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Месяц: {{ month }}</h2>
+  <p>Выберите день (1–31). Введите номер комнаты и нажмите выбрать день.</p>
+  <form action="{{ url_for('choose_duration', month=month, day=1) }}" method="post" onsubmit="event.preventDefault(); submitWithDay();">
+    <label>Номер комнаты: <input type="text" name="room" id="room" required></label><br><br>
+    <label>День: <input type="number" id="day" name="day" min="1" max="31" value="1" required></label><br><br>
+    <button type="submit">Продолжить</button>
+  </form>
+
+<script>
+function submitWithDay(){
+  const form = event.target;
+  const day = document.getElementById('day').value;
+  const action = "{{ url_for('choose_duration', month=month, day=0) }}".replace('/0','/'+day);
+  form.action = action;
+  form.submit();
+}
+</script>
+{% endblock %}

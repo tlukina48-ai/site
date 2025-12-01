@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; margin: 20px; background:#f7f7fb; color:#222; }
+header h1 { margin:0; }
+nav a { margin-right:10px; color:#004b8d; text-decoration:none; }
+.flashes { list-style:none; padding:0; color:#a00; }
+.card { background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.08); margin-bottom:8px; }
+button { background:#007bff; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; }
+button:hover { opacity:0.95; }

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Добро пожаловать</h2>
+  <p>Для бронирования нужно представиться — введите имя и номер комнаты:</p>
+  <form action="{{ url_for('identify') }}" method="post">
+    <label>Имя: <input type="text" name="name" required></label><br><br>
+    <label>Номер комнаты: <input type="text" name="room" required></label><br><br>
+    <button type="submit">Продолжить</button>
+  </form>
+{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+  <h2>Добро пожаловать</h2>
+  <p>Для бронирования нужно представиться — введите имя и номер комнаты:</p>
+  <form action="{{ url_for('identify') }}" method="post">
+    <label>Имя: <input type="text" name="name" required></label><br><br>
+    <label>Номер комнаты: <input type="text" name="room" required></label><br><br>
+    <button type="submit">Продолжить</button>
+  </form>
+{% endblock %}

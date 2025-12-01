@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Мои брони</h2>
+  {% if rows %}
+    <ul>
+    {% for r in rows %}
+      <li>
+        ID {{ r.id }} — {{ r.room }} — {{ r.month }} {{ r.day }} — {{ r.start }} — {{ r.end }}
+        <form action="{{ url_for('cancel', bid=r.id) }}" method="post" style="display:inline">
+          <button type="submit">Отменить</button>
+        </form>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>У вас нет броней.</p>
+  {% endif %}
+{% endblock %}

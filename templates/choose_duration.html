@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Месяц: {{ month }}, День: {{ day }}</h2>
+  <p>Комната: {{ session.get('room') }}</p>
+  <p>Выберите длительность:</p>
+  <ul>
+    <li><a href="{{ url_for('show_slots', duration=1) }}">⏱ 1 час</a></li>
+    <li><a href="{{ url_for('show_slots', duration=2) }}">⏱ 2 часа</a></li>
+    <li><a href="{{ url_for('show_slots', duration=3) }}">⏱ 3 часа</a></li>
+    <li><a href="{{ url_for('custom_range') }}">✏️ Свой диапазон</a></li>
+  </ul>
+{% endblock %}

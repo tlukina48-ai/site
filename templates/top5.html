@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Доска почёта — топ 5</h2>
+  <ol>
+    {% for it in data %}
+      <li>{{ it.user }} — {{ it.count }} брони</li>
+    {% endfor %}
+  </ol>
+{% endblock %}

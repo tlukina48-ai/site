@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Свой диапазон — {{ session.get('month') }} {{ session.get('day') }}</h2>
+  <form method="post">
+    <label>Ввод (HH:MM-HH:MM): <input type="text" name="range" placeholder="12:00-15:00" required></label><br><br>
+    <button type="submit">Забронировать</button>
+  </form>
+{% endblock %}
